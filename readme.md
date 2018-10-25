@@ -1,8 +1,11 @@
 # Laravel Base to project 5.5
 
 [Deploy (Usando Envoy)](./docs/deploy.md)
+
 [Configuração Local](./docs/local_config.md)
+
 [Configura Ambiente de testes](./docs/tests.md)
+
 [ACL](./docs/acl.md)
 
  ## packages JS
