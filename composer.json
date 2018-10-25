@@ -1,0 +1,85 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.0",
+        "fideloper/proxy": "~3.3",
+        "laravel/framework": "5.5.*",
+        "laravel/tinker": "~1.0",
+        "barryvdh/laravel-snappy": "^0.4.1",
+        "h4cc/wkhtmltoimage-amd64": "0.12.x",
+        "h4cc/wkhtmltopdf-amd64": "0.12.x",
+        "intervention/image": "2.4.2",
+        "owen-it/laravel-auditing": "5.0.4",
+        "askedio/laravel-soft-cascade": "^5.5",
+        "artesaos/defender": "0.7",
+        "davejamesmiller/laravel-breadcrumbs": "4.2.0",
+        "arcanedev/log-viewer": "4.4.*"
+    },
+    "require-dev": {
+        "filp/whoops": "~2.0",
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "~6.0",
+        "symfony/thanks": "^1.0",
+        "xethron/migrations-generator": "^2.0",
+        "barryvdh/laravel-debugbar": "~2.4",
+        "krlove/eloquent-model-generator": "^1.2.6",
+        "phpmd/phpmd": "@stable",
+        "squizlabs/php_codesniffer": "3.2.3"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories",
+            "modules/IBGE/database/seeds"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "ACL\\": "modules/ACL/app",
+            "Select\\": "modules/Select/app",
+            "Audit\\": "modules/Audit/app",
+            "Mailer\\": "modules/Mailer/app",
+            "IBGE\\": "modules/IBGE/app"
+        },
+        "files": [
+            "app/helpers.php",
+            "modules/ACL/helpers.php",
+            "modules/Select/helpers.php",
+            "modules/Audit/helpers.php",
+            "modules/Mailer/helpers.php",
+            "modules/IBGE/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ]
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}

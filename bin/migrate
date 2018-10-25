@@ -1,0 +1,7 @@
+php artisan config:clear
+php artisan config:cache
+composer dumpautoload
+php artisan migrate:reset
+php artisan db:seed --class=CidadesEstadosSeeder
+php artisan migrate --seed
+php artisan louzada:create:permission --force

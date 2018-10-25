@@ -1,0 +1,38 @@
+#Ide files
+.idea/
+.buildpath
+.project
+.settings/
+*~
+nbproject/
+.DS_Store
+
+# Composer files
+composer.phar
+composer.lock
+vendor/
+!resources/views/vendor/
+
+#Report Files
+phpmd-modules.txt
+phpmd-app.txt
+
+/node_modules
+/bower_components
+Homestead.yaml
+Homestead.json
+/nbproject/private/
+npm-debug.log
+
+geduc.iml
+
+_ide_helper.php
+phpmd-app.txt
+
+.editorconfig
+
+public/mix-manifest.json
+
+.env
+.env.testing
+envoy

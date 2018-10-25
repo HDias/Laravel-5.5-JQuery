@@ -1,0 +1,4 @@
+composer update
+npm install
+php artisan config:clear
+php artisam config:cache

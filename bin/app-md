@@ -1,0 +1,6 @@
+vendor/bin/phpmd app/ text cleancode,ruleset/cleancode.xml --reportfile ./ruleset/phpmd/phpmd-cleancode.txt
+vendor/bin/phpmd app/ text controversial,ruleset/controversial.xml  --reportfile ./ruleset/phpmd/phpmd-controversial.txt
+vendor/bin/phpmd app/ text naming,ruleset/naming.xml  --reportfile ./ruleset/phpmd/phpmd-naming.txt
+vendor/bin/phpmd app/ text codesize --reportfile ./ruleset/phpmd/phpmd-codesize.txt
+vendor/bin/phpmd app/ text design --reportfile ./ruleset/phpmd/phpmd-design.txt
+vendor/bin/phpmd app/ text unusedcode --reportfile ./ruleset/phpmd/phpmd-unusedcode.txt

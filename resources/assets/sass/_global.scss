@@ -1,0 +1,17 @@
+// Global styling for this template
+
+.text {
+  &-black {
+    color: black !important;
+  }
+}
+
+.full {
+  &-border {
+    &-none {
+      outline: none !important;
+      border: none !important;
+      border-color: transparent !important;
+    }
+  }
+}

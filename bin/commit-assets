@@ -1,0 +1,3 @@
+npm run production
+git add --all
+git commit -m "build assets to production"
