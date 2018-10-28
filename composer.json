@@ -10,6 +10,7 @@
         "artesaos/defender": "0.7",
         "askedio/laravel-soft-cascade": "5.5.15",
         "barryvdh/laravel-snappy": "0.4.3",
+        "brotzka/laravel-dotenv-editor": "2.*",
         "davejamesmiller/laravel-breadcrumbs": "4.2.0",
         "fideloper/proxy": "~3.3",
         "h4cc/wkhtmltoimage-amd64": "0.12.x",

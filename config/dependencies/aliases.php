@@ -41,6 +41,9 @@ $production = [
 
     // http://image.intervention.io/
     'Image' => Intervention\Image\Facades\Image::class,
+
+    // https://github.com/Brotzka/laravel-dotenv-editor/wiki/Installation
+    'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
 ];
 
 $local = [

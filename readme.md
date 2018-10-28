@@ -1,6 +1,3 @@
-Editar o .env 
-brotzka/laravel-dotenv-editor"
-
 Visualizar route
 garygreen/pretty-routes
 
@@ -48,6 +45,11 @@ garygreen/pretty-routes
      - phpmd/phpmd
      - squizlabs/php_codesniffer
     ````
+
+ ### Para editar .env
+
+  - Está na rota `/admin/enveditor`
+  
 
  #### Started By
  

@@ -24,8 +24,7 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 $this->get('/', 'HomeController@index')->name('home');
 
-$this->group(['prefix' => '', 'middleware' => ['auth:web', 'needsPermission']], function () {
-    $this->get('/home', 'HomeController@index')->name('home');
+$this->group(['prefix' => 'admin', 'middleware' => ['auth:web', 'needsPermission']], function () {
 
     include __DIR__ . '/dashboard.php';
 });
