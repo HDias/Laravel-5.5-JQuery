@@ -1,6 +1,3 @@
-Visualizar route
-garygreen/pretty-routes
-
 # Laravel Base to project 5.5
 
 [Deploy (Usando Envoy)](./docs/deploy.md)
@@ -46,9 +43,10 @@ garygreen/pretty-routes
      - squizlabs/php_codesniffer
     ````
 
- ### Para editar .env
+ ### Utilities
 
-  - Está na rota `/admin/enveditor`
+  - Editar, baixar e fazer backups do `.env`. Route: `/admin/enveditor`
+  - Visualizar Rotas `APP_DEBUG` deve ser TRUE. Route: `/routes`
   
 
  #### Started By
