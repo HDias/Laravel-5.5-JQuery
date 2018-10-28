@@ -1,8 +1,26 @@
 // Global styling for this template
+html {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    margin-top: 56px;
+}
+
 
 .text {
   &-black {
-    color: black !important;
+    color: black;
+  }
+  &-white {
+    color: white;
   }
 }
 

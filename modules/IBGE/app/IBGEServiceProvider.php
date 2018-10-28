@@ -21,7 +21,7 @@ class IBGEServiceProvider extends ServiceProvider
         parent::boot();
 
         // Registra pasta de Migrations
-        $this->loadMigrationsFrom(address_path('database/migrations'));
+//        $this->loadMigrationsFrom(ibge_path('database/migrations'));
     }
 
     /**

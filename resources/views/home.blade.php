@@ -1,81 +1,90 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
-    <div class="container-fluid">
-        <div class="row">
+    <title>Laravel</title>
 
-            @is('Desenvolvedor')
-            <div class="col-3">
-                <div class="small-card bg-gray">
-                    <div class="inner">
-                        <h3>{{ $countUser }}</h3>
-                        <p>Usuários</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-user"></i>
-                    </div>
-                    @if (hasPermission(['user.index']))
-                        <a href="{{ route('user.index') }}" class="small-card-footer">Ver mais
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </a>
-                    @endif
-                </div>
-            </div>
-            @endis
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-            <div class="col-3">
-                <div class="small-card bg-yellow">
-                    <div class="inner">
-                        <h3>{{ $countStudents }}</h3>
-                        <p>Estudantes</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-user"></i>
-                    </div>
-                    @if (hasPermission(['student.index']))
-                        <a href="{{ route('student.index') }}" class="small-card-footer">Ver mais
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </a>
-                    @endif
-                </div>
-            </div>
+    <!-- Styles -->
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
 
-            <div class="col-3">
-                <div class="small-card bg-blue-strong">
-                    <div class="inner">
-                        <h3>{{ $countCourse }}</h3>
-                        <p>Cursos</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-graduation-cap"></i>
-                    </div>
+        .full-height {
+            height: 100vh;
+        }
 
-                    @if (hasPermission(['user.index']))
-                        <a href="{{route('course.index')}}" class="small-card-footer">Ver mais
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </a>
-                    @endif
-                </div>
-            </div>
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
 
-            <div class="col-3">
-                <div class="small-card bg-light-blue">
-                    <div class="inner">
-                        <h3>{{ $countGroup }}</h3>
-                        <p>Grupos</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-users"></i>
-                    </div>
+        .position-ref {
+            position: relative;
+        }
 
-                    @if (hasPermission(['user.index']))
-                        <a href="{{route('group.index')}}" class="small-card-footer">Ver mais
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </a>
-                    @endif
-                </div>
-            </div>
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
 
+        .content {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 84px;
+        }
+
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-center position-ref full-height">
+    @if (Route::has('login'))
+        <div class="top-right links">
+                <a href="{{ route('login') }}">Login</a>
+        </div>
+    @endif
+
+    <div class="content">
+        <div class="title m-b-md">
+            Laravel
+        </div>
+
+        <div class="links">
+            <a href="https://laravel.com/docs">Documentation</a>
+            <a href="https://laracasts.com">Laracasts</a>
+            <a href="https://laravel-news.com">News</a>
+            <a href="https://forge.laravel.com">Forge</a>
+            <a href="https://github.com/laravel/laravel">GitHub</a>
         </div>
     </div>
-@endsection
+</div>
+</body>
+</html>

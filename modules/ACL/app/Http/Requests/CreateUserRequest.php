@@ -1,6 +1,6 @@
 <?php
 
-namespace GeDuc\Http\Requests;
+namespace ACL\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

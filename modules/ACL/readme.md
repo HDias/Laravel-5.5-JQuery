@@ -23,3 +23,7 @@ public function render($request, Exception $exception)
         ]
     }
 ```
+
+// Adicionar para aumentar a segurança do password digitado
+
+https://github.com/unicodeveloper/laravel-password

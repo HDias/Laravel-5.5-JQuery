@@ -10,7 +10,7 @@
                 {{--<i class="fas fa-user-lock"></i>--}}
                 {{--</div>--}}
                 <div class="card-body">
-                    <h3 class="card-title login100-form-title text-center py-4 mb-5"><strong>SNA</strong></h3>
+                    <h3 class="card-title login100-form-title text-center py-4 mb-5"><strong>{{ config('app.name') }}</strong></h3>
 
                     <form class="login-form" method="POST" action="{{ route('login') }}" novalidate="novalidate">
                         {{ csrf_field() }}

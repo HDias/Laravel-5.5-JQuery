@@ -22,14 +22,6 @@
     @yield('content')
 </div>
 
-{{--<footer class="sticky-footer">--}}
-    {{--<div class="container">--}}
-        {{--<div class="text-center">--}}
-            {{--<small>Copyright © NUT 2018</small>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</footer>--}}
-
 <!-- Scripts -->
 <script src="{{ asset('/js/app.js') }}"></script>
 </body>

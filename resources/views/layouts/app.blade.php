@@ -15,24 +15,24 @@
 
     @yield('style')
 </head>
-<body class="fixed-nav sticky-footer bg-blue" id="page-top">
-{{--@include('layouts.nav.nav')--}}
-<div id="app" class="content-wrapper">
-    <div class="container-fluid theme-sna">
+<body>
+<header>
+    @include('layouts.nav.nav')
+</header>
 
-        @include('alerts.flashMessage')
-        @yield('content')
-    </div>
-</div>
-<footer class="sticky-footer">
-    <div class="container">
-        <div class="text-center">
-            <small>Copyright © NUT 2018</small>
-        </div>
-    </div>
-</footer>
+<!-- Begin page content -->
+<main role="main" class="container-fluid">
+<!-- <div class="container-fluid theme-sna"> -->
+    {{ Breadcrumbs::render() }}
+
+    @include('alerts.flashMessage')
+    @yield('content')
+</main>
+
+@include('layouts.footer')
 
 <!-- Scripts -->
 <script src="{{ asset('/js/app.js') }}"></script>
+@yield('script')
 </body>
 </html>

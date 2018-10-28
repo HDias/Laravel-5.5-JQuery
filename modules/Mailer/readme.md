@@ -9,3 +9,6 @@
         ]
     }
 ```
+
+ADD 
+https://github.com/shvetsgroup/laravel-email-database-log

@@ -2,10 +2,9 @@
 
 namespace ACL\Http\Controllers;
 
-use App\Http\Requests\Auth\CreateUserRequest;
-use App\Http\Requests\Auth\UpdateUserPasswordRequest;
-use App\Http\Requests\Auth\UpdateUserRequest;
-use App\Models\User;
+use ACL\Http\Requests\CreateUserRequest;
+use ACL\Http\Requests\UpdateUserPasswordRequest;
+use ACL\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -21,7 +20,7 @@ class UserController extends Controller
         } catch (\Exception $exception) {
             flash('danger', trans('flash.save.error'), $exception->getMessage());
 
-            return redirect()->route('home.index');
+            return redirect()->route('dashboard.index');
         }
     }
 
@@ -160,7 +159,7 @@ class UserController extends Controller
 
             flash('success', trans('flash.update_success'));
 
-            return redirect()->route('home');
+            return redirect()->route('dashboard.index');
         } catch (\Exception $exception) {
             flash('danger', trans('flash.save_error'), $exception->getMessage());
 

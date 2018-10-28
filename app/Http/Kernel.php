@@ -57,5 +57,11 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+
+        // Access control using permissions
+        'needsPermission' => \Artesaos\Defender\Middlewares\NeedsPermissionMiddleware::class,
+
+        // Simpler access control, uses only the groups
+        'needsRole' => \Artesaos\Defender\Middlewares\NeedsRoleMiddleware::class
     ];
 }

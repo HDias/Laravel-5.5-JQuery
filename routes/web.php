@@ -22,6 +22,10 @@ $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+$this->get('/', 'HomeController@index')->name('home');
+
+$this->group(['prefix' => '', 'middleware' => ['auth:web', 'needsPermission']], function () {
+    $this->get('/home', 'HomeController@index')->name('home');
+
+    include __DIR__ . '/dashboard.php';
+});

@@ -2,7 +2,7 @@
 
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-blue bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand d-none d-sm-block" href="{{ route('home') }}">
+    <a class="navbar-brand d-none d-sm-block" href="{{ route('dashboard.index') }}">
         <img class="img-logo" src="/img/logo.png">
     </a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"

@@ -3,12 +3,9 @@
 namespace Audit\Http\Controllers;
 
 use Audit\Model\Audit;
-use GeDuc\Http\Controllers\Paginator;
 
 class LogController extends Controller
 {
-    use Paginator;
-
     public function index()
     {
         try {

@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class PermissionController extends Controller
 {
-    use Paginator;
 
     public function index(Request $request)
     {

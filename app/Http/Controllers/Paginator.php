@@ -6,7 +6,7 @@
  * Time: 22:56
  */
 
-namespace ACL\Http\Controllers;
+namespace App\Http\Controllers;
 
 trait Paginator
 {

@@ -1,9 +1,17 @@
+Editar o .env 
+brotzka/laravel-dotenv-editor"
+
+Visualizar route
+garygreen/pretty-routes
+
 # Laravel Base to project 5.5
 
 [Deploy (Usando Envoy)](./docs/deploy.md)
 [Configuração Local](./docs/local_config.md)
 [Configura Ambiente de testes](./docs/tests.md)
 [ACL](./docs/acl.md)
+
+ ## PHP: 7.1, Node: 7.3.0 and NPM 3.10.10
 
  ## packages JS
   - JQuery
@@ -29,6 +37,7 @@
      - arcanedev/log-viewer
      - barryvdh/laravel-snappy
      - askedio/laravel-soft-cascade
+     - laravelcollective/html
     ````
 
  - @Dev
