@@ -8,66 +8,63 @@
   display: block;
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-
-  > .inner {
-    padding: 10px;
-  }
-  > .small-card-footer {
-    position: relative;
-    text-align: center;
-    padding: 3px 0;
-    color: #fff;
-    color: rgba(255, 255, 255, 0.8);
-    display: block;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-  }
-  > .small-card-footer:hover {
-    color: #fff;
-    background: rgba(0, 0, 0, 0.15);
-  }
-
-  h3 {
-    font-size: 38px;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-    white-space: nowrap;
-    padding: 0;
-  }
-  p {
-    font-size: 15px;
-  }
-  p > small {
-    display: block;
-    color: #f9f9f9;
-    font-size: 13px;
-    margin-top: 5px;
-  }
-  h3, p {
-    z-index: 5;
-  }
-  .icon {
-    -webkit-transition: all 0.3s linear;
-    -o-transition: all 0.3s linear;
-    transition: all 0.3s linear;
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    z-index: 0;
-    font-size: 90px;
-    color: rgba(0, 0, 0, 0.15);
-  }
-
-  :hover {
-    text-decoration: none;
-    color: #f9f9f9;
-  }
-  :hover .icon {
-    font-size: 95px;
-  }
 }
-  
+.small-card > .inner {
+  padding: 10px;
+}
+.small-card > .small-card-footer {
+  position: relative;
+  text-align: center;
+  padding: 3px 0;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+.small-card > .small-card-footer:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.15);
+}
+.small-card h3 {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  padding: 0;
+}
+.small-card p {
+  font-size: 15px;
+}
+.small-card p > small {
+  display: block;
+  color: #f9f9f9;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.small-card h3,
+.small-card p {
+  z-index: 5;
+}
+.small-card .icon {
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  z-index: 0;
+  font-size: 90px;
+  color: rgba(0, 0, 0, 0.15);
+}
+.small-card:hover {
+  text-decoration: none;
+  color: #f9f9f9;
+}
+.small-card:hover .icon {
+  font-size: 95px;
+}
 @media (max-width: 767px) {
   .small-card {
     text-align: center;
