@@ -125,7 +125,7 @@
   <div class="footer-copyright py-3 text-center">
     © 2018 Copyright:
     <a href="#">
-      <strong class="text-white"> ELEVEN</strong>
+      <strong class="text-white"> horecio@gmail.com</strong>
     </a>
   </div>
   <!--/.Copyright -->

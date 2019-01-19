@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-blue bg-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top" id="mainNav">
     <a class="navbar-brand d-none d-sm-block" href="{{ route('home') }}">
         {{ config('app.name') }}
     </a>
@@ -14,10 +14,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         @if (!Auth::guest())
-            <ul class="navbar-nav" id="exampleAccordion">
+            <ul class="navbar-nav">
 
-                <li class="nav-item {{ menuActive(['dashboard.index'], Route::currentRouteName(), 3) }}" data-toggle="tooltip"
-                    data-placement="right" title="Dashboard">
+                <li class="nav-item {{ menuActive(['dashboard.index'], Route::currentRouteName(), 3) }}" 
+                    data-toggle="tooltip"
+                    data-placement="right" 
+                    title="Dashboard">
                     <a class="nav-link" href="{{ route('dashboard.index') }}">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Painel</span>
