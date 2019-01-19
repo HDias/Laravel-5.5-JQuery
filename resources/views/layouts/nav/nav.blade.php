@@ -42,6 +42,34 @@
 
             </ul>
         @endif
+        <ul class="navbar-nav ml-auto">
+            @if (!Auth::guest())
+                <li class="nav-item" 
+                    data-toggle="tooltip"
+                    data-placement="right" 
+                    title="Editar Perfil">
+
+                    <a class="nav-link" 
+                        href="{{ route('user.edit_logged') }}"
+                        >
+                        <i class="fa fa-fw fa-user"></i>
+                    {{ \Auth::user()->name }} |
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-center" 
+                        id="logout-button" 
+                        data-toggle="modal"
+                        href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i> Sair</a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            @endif
+        </ul>
     </div>
 </nav>
 
