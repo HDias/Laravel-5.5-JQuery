@@ -123,7 +123,7 @@
 
   <!-- Copyright-->
   <div class="footer-copyright py-3 text-center">
-    © 2018 Copyright:
+    © 2019 Copyright:
     <a href="#">
       <strong class="text-white"> horecio@gmail.com</strong>
     </a>
