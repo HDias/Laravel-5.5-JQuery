@@ -17,7 +17,7 @@ class AdminUserTableSeeder extends Seeder
         if ($user < 1) {
             DB::table('users')->insert([
                 'name' => 'Nut-Dev',
-                'email' => 'admin@admin',
+                'email' => 'admin@admin.com',
                 'cpf' => '01428452133',
                 'password' => bcrypt('123456')
             ]);
@@ -30,10 +30,14 @@ class AdminUserTableSeeder extends Seeder
 
             $superUserRole = \Defender::createRole(config('defender.superuser_role'));
             foreach (app('acl.model.user')->whereIn('email', [
-                'admin@admin',
+                'admin@admin.com',
             ])->get() as $user) {
                 $user->attachRole($superUserRole);
             }
+            echo "Admin user criado!\n";
+            echo "email: admin@admin.com\n";
+            echo "cpf: 01428452133\n";
+            echo "senha:123456\n";
         }
     }
 }
