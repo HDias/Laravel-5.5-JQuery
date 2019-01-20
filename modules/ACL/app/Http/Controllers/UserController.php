@@ -11,23 +11,24 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        try {
+        // try {
             $search = $request->input('search', '');
 
-            $users = app('service.user')->allUserCheckRoles($search)->paginate(10);
+            $users = app('acl.service.user')->allUserCheckRoles($search)->paginate(10);
+            // $users = app('acl.service.user')->allUserCheckRoles($search)->all();
 
             return view('acl.user.index', compact('users'));
-        } catch (\Exception $exception) {
-            flash('danger', trans('flash.save.error'), $exception->getMessage());
+        // } catch (\Exception $exception) {
+        //     flash('danger', trans('flash.save.error'), $exception->getMessage());
 
-            return redirect()->route('dashboard.index');
-        }
+        //     return redirect()->route('dashboard.index');
+        // }
     }
 
     public function create()
     {
         try {
-            $roles = app('service.user')->allRoleWithoutSuperUser()->get();
+            $roles = app('acl.service.user')->allRoleWithoutSuperUser()->get();
 
             return view('acl.user.create', compact('roles'));
         } catch (\Exception $exception) {
@@ -77,7 +78,7 @@ class UserController extends Controller
 
             $selectedRoles = app('acl.model.role')->findToSelect($user->id)->get();
 
-            $roles = app('service.user')->allRoleWithoutSuperUser();
+            $roles = app('acl.service.user')->allRoleWithoutSuperUser();
 
             return view('acl.user.edit', compact('user', 'roles', 'selectedRoles'));
         } catch (\Exception $exception) {

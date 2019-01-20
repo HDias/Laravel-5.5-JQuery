@@ -10,7 +10,6 @@ class CreateDefenderRolesTable extends Migration
      */
     public function up()
     {
-        DB::statement('CREATE SCHEMA IF NOT EXISTS defender');
         Schema::create(config('defender.role_table', 'roles'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();

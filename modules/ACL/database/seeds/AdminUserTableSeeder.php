@@ -16,7 +16,7 @@ class AdminUserTableSeeder extends Seeder
 
         if ($user < 1) {
             DB::table('users')->insert([
-                'name' => 'Nut-Dev',
+                'name' => 'Horecio',
                 'email' => 'admin@admin.com',
                 'cpf' => '01428452133',
                 'password' => bcrypt('123456')

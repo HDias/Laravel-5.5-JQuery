@@ -5,6 +5,7 @@ namespace ACL;
 use ACL\Model\Permission;
 use ACL\Model\Role;
 use ACL\Model\User;
+use ACL\Service\UserService;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -65,12 +66,16 @@ class ACLServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // Models
         $this->app->bind('acl.model.permission', Permission::class);
         $this->app->bind('acl.model.role', Role::class);
         $this->app->bind('acl.model.user', User::class);
 
+        // Service        
+        $this->app->bind('acl.service.user', UserService::class);
 
         $this->app->register(\Artesaos\Defender\Providers\DefenderServiceProvider::class);
         $this->app->alias('Defender', \Artesaos\Defender\Facades\Defender::class);
+
     }
 }

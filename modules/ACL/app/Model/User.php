@@ -65,4 +65,13 @@ class User extends Authenticatable implements Auditable, UserResolver
     {
         $this->notify(new ResetPasswordNotification($token));
     }
+    
+    public function finAllUserWithoutDeveloper()
+    {
+        return self::leftJoin('role_user', 'role_user.user_id', '=', 'users.id')
+            ->leftJoin('roles', 'role_user.role_id', '=', 'roles.id')
+            ->where('roles.name', 'NOT LIKE', 'Desenvolvedor')
+            ->orWhereNull('roles.name')
+            ->select('users.*');
+    }
 }

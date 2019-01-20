@@ -96,12 +96,15 @@ class RoleController extends Controller
         /**
          * Evita que sejam deletas as Roles com id 1 e 2
          */
-        if (! in_array($id, [1, 2])) {
+        if (! in_array($id, [1, 2, 3])) {
             Role::findOrfail($id)->delete();
+            return response()->json(
+                ['success' => true, 'route' => route('acl.role.index')]
+            );
         }
 
         return response()->json(
-            ['success' => true, 'route' => route('acl.role.index')]
-        );
+            ['success' => true, 'message' => 'Essa não!']
+        );        
     }
 }

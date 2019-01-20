@@ -1,6 +1,6 @@
 @if (hasPermission(['acl.permission.index', 'acl.permission.edit', 'acl.role.index', 'acl.role.create', 'acl.role.edit', 'user.index', 'user.create', 'user.edit']))
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" 
+        <a class="nav-link dropdown-toggle {{ menuActive(['acl.permission.index', 'acl.permission.edit', 'acl.role.index', 'acl.role.create', 'acl.role.edit', 'user.index', 'user.create', 'user.edit'], Route::currentRouteName(), 2) }}" 
             data-toggle="dropdown"
             href="#" 
             id="dropdownComponentsAcl" 
@@ -10,7 +10,7 @@
             <i class="fa fa-fw fa-shield"></i>
             Controle de Acesso
         </a>
-        <div class="dropdown-menu {{ menuActive(['acl.permission.index', 'acl.permission.edit', 'acl.role.index', 'acl.role.create', 'acl.role.edit', 'user.index', 'user.create', 'user.edit'], Route::currentRouteName(), 2) }}" 
+        <div class="dropdown-menu" 
             aria-labelledby="dropdownComponentsAcl">
 
                 @if (hasPermission(['user.index', 'user.create', 'user.edit']))
@@ -27,7 +27,7 @@
                     <a class="dropdown-item {{ menuActive(['acl.permission.index', 'acl.permission.edit'], Route::currentRouteName(), 3) }}" 
                         href="{{ route('acl.permission.index') }}">Permissões</a>
                 @endif
-                
+
         </div>
     </li>
 @endif

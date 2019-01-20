@@ -1,7 +1,7 @@
 
 window._ = require('lodash');
 
-window.Popper = require('popper.js/dist/umd/popper');
+window.Popper = require('popper.js');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -10,12 +10,20 @@ window.Popper = require('popper.js/dist/umd/popper');
  */
 
 try {
-    window.$ = window.jQuery = require('jquery/dist/jquery.min');
+    window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap/dist/js/bootstrap.bundle.min');
+    require('bootstrap');
 } catch (e) {
     console.log('***Jquery | Bootstrap Errors **** | ' + e.message);
 }
+
+// // https://github.com/mistic100/Bootstrap-Confirmation
+try {    
+    require('bootstrap-confirmation2');
+} catch (e) {
+    console.log('*** Bootstrap Confirmation **** | ' + e.message);
+}
+
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

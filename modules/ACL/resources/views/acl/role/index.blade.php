@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="card mb-4 card-shadow-6">
             <div class="card-header">
-                <h5 class="title"><strong>Lista</strong> de Perfis</h5>
+                <h5 class="title d-inline"><strong>Lista</strong> de Perfis</h5>
 
                 <div class="pull-right">
 
@@ -45,14 +45,12 @@
                                     @if(! in_array($td->name, $roles))
                                         @shield('acl.role.edit')
                                             <a href="{{ route('acl.role.edit', $td->id) }}" class="btn btn-warning btn-sm">
-                                                <i class="fa fa-pencil"></i>
+                                                <i class="fas fa-edit"></i>
                                             </a>
                                         @endshield
 
                                         @shield('acl.role.destroy')
-                                            <nut-trash-btn href="{{ route('acl.role.destroy', $td->id) }}"
-                                                           data-id="{{ $td->id }}">
-                                            </nut-trash-btn>
+                                            @include('layouts.trashBtn', ['route' => route('acl.role.destroy', $td->id)])
                                         @endshield
 
                                         @shield('acl.permission.index')

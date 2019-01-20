@@ -10,7 +10,7 @@ class Role extends BaseRole
 {
     use SuperUser;
 
-    protected $table = 'defender.roles';
+    protected $table = 'roles';
 
     public static function selectOption()
     {
@@ -24,10 +24,10 @@ class Role extends BaseRole
 
     public function findAllByPermissionOrUser(int $permission = null, int $user = null)
     {
-        $query = $this->select('defender.roles.*')->orderBy('defender.roles.updated_at', 'DESC');
+        $query = $this->select('roles.*')->orderBy('roles.updated_at', 'DESC');
 
         if (!$this->isSuperUser()) {
-            $query = $this->where('defender.roles.name', '<>', config('defender.superuser_role'));
+            $query = $this->where('roles.name', '<>', config('defender.superuser_role'));
         }
 
         if (!$permission && !$user) {
@@ -48,20 +48,20 @@ class Role extends BaseRole
      */
     public function findByPermission(int $permissionId)
     {
-        return $this->join('defender.permission_role', 'defender.roles.id', '=', 'defender.permission_role.role_id')
+        return $this->join('defender.permission_role', 'roles.id', '=', 'defender.permission_role.role_id')
             ->where('defender.permission_role.permission_id', $permissionId);
     }
 
     public function findByUser(int $userId)
     {
-        return $this->join('defender.role_user', 'defender.roles.id', '=', 'defender.role_user.role_id')
-            ->where('defender.role_user.user_id', $userId);
+        return $this->join('role_user', 'roles.id', '=', 'role_user.role_id')
+            ->where('role_user.user_id', $userId);
     }
 
     public function findToSelect(int $userId)
     {
-        return $this->select('defender.roles.id', 'defender.roles.name as label')
-            ->join('defender.role_user', 'defender.roles.id', '=', 'defender.role_user.role_id')
-            ->where('defender.role_user.user_id', $userId);
+        return $this->select('roles.id', 'roles.name as label')
+            ->join('role_user', 'roles.id', '=', 'role_user.role_id')
+            ->where('role_user.user_id', $userId);
     }
 }
