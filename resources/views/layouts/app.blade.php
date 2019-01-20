@@ -21,7 +21,7 @@
 </header>
 
 <!-- Begin page content -->
-<main role="main" class="container-fluid">
+<main role="main" class="container-fluid m-vh-80">
 <!-- <div class="container-fluid theme-sna"> -->
     {{ Breadcrumbs::render() }}
 
