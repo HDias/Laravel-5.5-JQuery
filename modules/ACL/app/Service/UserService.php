@@ -20,11 +20,10 @@ class UserService
     public function allRoleWithoutDeveloper()
     {
         if (\Defender::hasRoles([config('defender.superuser_role')])) {
-            return Role::select('id', 'name as label')->get();
+            return Role::select('id', 'name as label');
         }
 
         return Role::select('id', 'name as label')
-            ->whereNotIn('name', ['Desenvolvedor','Estudante'])
-            ->get();
+            ->whereNotIn('name', ['Desenvolvedor','Estudante']);
     }
 }

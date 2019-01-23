@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.1.0",
         "arcanedev/log-viewer": "4.4.*",
         "artesaos/defender": "0.7",
         "askedio/laravel-soft-cascade": "5.5.15",
