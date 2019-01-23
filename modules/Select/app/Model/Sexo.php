@@ -2,7 +2,7 @@
 
 namespace Select\Model;
 
-final class Gender implements BasicEnum
+final class Sexo implements BasicEnum
 {
     private const MASCULINO = 1;
     private const FEMININO = 2;
@@ -13,9 +13,7 @@ final class Gender implements BasicEnum
     ];
 
     /**
-     * Ordena pela key do array
-     *
-     * @return array
+     * @inheritdoc
      */
     public static function orderByKey($type = "ASC")
     {
@@ -32,9 +30,7 @@ final class Gender implements BasicEnum
     }
 
     /**
-     * Ordena pelo value do array
-     *
-     * @return array
+     * @inheritdoc
      */
     public static function orderByValue($type = "ASC")
     {
@@ -48,5 +44,13 @@ final class Gender implements BasicEnum
         }
 
         return $array;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function findKeyByValue(string $value)
+    {
+        return array_search($value, self::TEXTS);;
     }
 }

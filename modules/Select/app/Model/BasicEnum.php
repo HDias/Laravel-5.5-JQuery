@@ -17,4 +17,12 @@ interface BasicEnum
      * @return array
      */
     public static function orderByValue();
+
+    /**
+     * Retorna uma KEY  de um elemento do array
+     *
+     * @param string $value
+     * @return mixed
+     */
+    public static function findKeyByValue(string $value);
 }

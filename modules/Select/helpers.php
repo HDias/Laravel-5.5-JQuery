@@ -14,24 +14,41 @@ if (!function_exists('select_path')) {
 
 if (!function_exists('getOptions')) {
 
-    function getOptions(string $slug, $orderBy = 'label', $order = 'ASC')
+    /**
+     * Retorna uma array de Option para o select
+     *
+     * @param string $className
+     * @param string $orderBy
+     * @param string $order
+     * @return array
+     */
+    function getOptions(string $className, $orderBy = 'Value', $order = 'ASC')
     {
-        return app('select.model.option')->findBySlug($slug, $orderBy, $order)->get();
+        $class = 'Select\\Model\\' . ucfirst($className);
+        $method = '::orderBy' . ucfirst($orderBy);
+
+        return call_user_func_array($class . $method, [$order]);
     }
 }
 
 if (!function_exists('getOption')) {
 
-    function getOption(string $slug, $id)
+    /**
+     * O valor salvo no Banco deve ser o VALUE do array
+     * Por isso aqui retonna somente o value para conseguir setar a option no select
+     *
+     * @param string $className
+     * @param $value
+     * @return mixed|string
+     */
+    function getOption(string $className, $value)
     {
-        if(! $id) {
+        if(! $value) {
             return '';
         }
 
-        return app('select.model.option')
-            ->select('label')
-            ->where('slug', $slug)
-            ->where('id', $id)
-            ->first();
+        $class = 'Select\\Model\\' . ucfirst($className);
+
+        return call_user_func_array($class . '::findKeyByValue', [$value]);
     }
 }

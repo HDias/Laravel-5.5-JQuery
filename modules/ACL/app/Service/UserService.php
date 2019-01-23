@@ -7,7 +7,6 @@ use GeDuc\Model\User;
 
 class UserService
 {
-
     public function allUserCheckRoles()
     {
         if (\Defender::hasRoles([config('defender.superuser_role')])) {

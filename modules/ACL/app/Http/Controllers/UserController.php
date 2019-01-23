@@ -6,7 +6,7 @@ use ACL\Http\Requests\CreateUserRequest;
 use ACL\Http\Requests\UpdateUserPasswordRequest;
 use ACL\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
-use Select\Model\Gender;
+use Select\Model\Sexo;
 
 class UserController extends Controller
 {
@@ -28,16 +28,15 @@ class UserController extends Controller
 
     public function create()
     {
-        dd(Gender::orderByValue());
-//        try {
-//            $roles = app('acl.service.user')->allRoleWithoutDeveloper()->get();
-//
-//            return view('acl.user.create', compact('roles'));
-//        } catch (\Exception $exception) {
-//            flash('danger', trans('flash.save.error'), $exception->getMessage());
-//
-//            return redirect()->route('user.index');
-//        }
+        try {
+            $roles = app('acl.service.user')->allRoleWithoutDeveloper()->get();
+
+            return view('acl.user.create', compact('roles'));
+        } catch (\Exception $exception) {
+            flash('danger', trans('flash.save.error'), $exception->getMessage());
+
+            return redirect()->route('user.index');
+        }
     }
 
     public function store(CreateUserRequest $request)
