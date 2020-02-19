@@ -3,9 +3,12 @@
 namespace ACL\Model;
 
 use Artesaos\Defender\Permission as BasePermission;
+use Wildside\Userstamps\Userstamps;
 
 class Permission extends BasePermission
 {
+    use Userstamps;
+
     protected $table = 'permissions';
 
     public static function selectOption()

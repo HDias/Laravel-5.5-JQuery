@@ -5,10 +5,11 @@ namespace ACL\Model;
 use ACL\Service\SuperUser;
 use Artesaos\Defender\Facades\Defender;
 use Artesaos\Defender\Role as BaseRole;
+use Wildside\Userstamps\Userstamps;
 
 class Role extends BaseRole
 {
-    use SuperUser;
+    use SuperUser, Userstamps;
 
     protected $table = 'roles';
 

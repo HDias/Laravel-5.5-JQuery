@@ -4,10 +4,12 @@ namespace ACL\Http\Controllers;
 
 use ACL\Http\Requests\UpdatePermissionRequest;
 use ACL\Model\Permission;
+use App\Http\Controllers\Paginator;
 use Illuminate\Http\Request;
 
 class PermissionController extends Controller
 {
+    use Paginator;
 
     public function index(Request $request)
     {

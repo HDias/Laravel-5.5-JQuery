@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         CreatePermissionsFromRoute::class,
+        \Aginev\LoginActivity\Commands\LoginActivityClean::class,
     ];
 
     /**

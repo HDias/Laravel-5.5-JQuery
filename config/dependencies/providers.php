@@ -43,6 +43,12 @@ $production = [
     Intervention\Image\ImageServiceProvider::class,
     // https://github.com/Askedio/laravel-soft-cascade/tree/5.5.14
     Askedio\SoftCascade\Providers\GenericServiceProvider::class,
+    // https://github.com/unicodeveloper/laravel-password
+    Unicodeveloper\DumbPassword\DumbPasswordServiceProvider::class,
+    // https://github.com/shvetsgroup/laravel-email-database-log
+    ShvetsGroup\LaravelEmailDatabaseLog\LaravelEmailDatabaseLogServiceProvider::class,
+    // https://github.com/aginev/login-activity
+    Aginev\LoginActivity\LoginActivityServiceProvider::class,
 
     /**
      * Modules

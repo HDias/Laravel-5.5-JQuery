@@ -12,10 +12,11 @@ use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use App\Model\Scope\SoftDeleting;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Mailer\Notification\ResetPasswordNotification;
+use Wildside\Userstamps\Userstamps;
 
 class User extends Authenticatable implements Auditable, UserResolver
 {
-    use Notifiable, \OwenIt\Auditing\Auditable, SoftDeletes, HasDefender, SoftCascadeTrait;
+    use Notifiable, \OwenIt\Auditing\Auditable, SoftDeletes, HasDefender, SoftCascadeTrait, Userstamps;
 
     /**
      * The attributes that are mass assignable.
@@ -65,7 +66,7 @@ class User extends Authenticatable implements Auditable, UserResolver
     {
         $this->notify(new ResetPasswordNotification($token));
     }
-    
+
     public function finAllUserWithoutDeveloper()
     {
         return self::leftJoin('role_user', 'role_user.user_id', '=', 'users.id')
